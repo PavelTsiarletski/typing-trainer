@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+/* Enable class-independent dark mode driven by the OS preference. */
+@variant dark (@media (prefers-color-scheme: dark));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keep the typing surface from showing a text-selection flash on fast typing. */
+.cursor-text {
+  caret-color: transparent;
+}
