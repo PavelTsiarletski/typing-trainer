@@ -31,7 +31,11 @@ function TypingAreaImpl({
   return (
     <div className="relative">
       <p
-        className="select-none font-mono text-2xl leading-relaxed tracking-wide sm:text-[28px]"
+        // Each character is its own inline <span> with no whitespace text
+        // nodes between them, which removes the default break opportunities;
+        // pre-wrap restores wrapping at spaces (and preserves them faithfully),
+        // break-words handles any overlong unbreakable run.
+        className="select-none whitespace-pre-wrap break-words font-mono text-2xl leading-relaxed tracking-wide sm:text-[28px]"
         aria-label="text to type"
       >
         {text.split('').map((ch, i) => {
